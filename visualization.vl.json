@@ -1,13 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 1000,
-  "height": 1000,
+  "width": 500,
+  "height": 800,
   "title": "the wildfire in California by area burned",
   
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/Shawn-monash/FIT3179_homework/main/js/CA_counties.json",
+        "url": "https://raw.githubusercontent.com/chengsikai1/FIT3179/main/CA_counties.json",
         "format": {"type": "topojson", "feature": "CA_counties"}
       },
 
