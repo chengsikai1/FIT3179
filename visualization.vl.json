@@ -1,23 +1,45 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "description": "A simple bar chart with embedded data.",
-  "data": {
-    "values": [
-      {"a": "A", "b": 28},
-      {"a": "B", "b": 55},
-      {"a": "C", "b": 43},
-      {"a": "D", "b": 91},
-      {"a": "E", "b": 81},
-      {"a": "F", "b": 53},
-      {"a": "G", "b": 19},
-      {"a": "H", "b": 87},
-      {"a": "I", "b": 52}
-    ]
-  },
-  "mark": "bar",
-  "encoding": {
-    "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-    "y": {"field": "b", "type": "quantitative"}
-  },
-  "config": {}
+  "width": 1000,
+  "height": 1000,
+  "title": "test",
+  
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Shawn-monash/FIT3179_homework/main/js/CA_counties.json",
+        "format": {"type": "topojson", "feature": "CA_counties"}
+      },
+
+      "projection": {"type": "albersUsa"},
+
+      "mark": {
+        "type": "geoshape", 
+        "fill": "lightgray", 
+        "stroke": "white"
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/chengsikai1/FIT3179/main/California_Fire_Incidents.csv"
+      },
+      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "size": {
+          "field": "AcresBurned",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [1000, 2000, 5000],
+            "range": [20, 80, 160, 320]
+          },
+          "legend": {"format": "0.1s"}
+        }
+      }
+
+    }
+  ]
+
 }
