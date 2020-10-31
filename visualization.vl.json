@@ -6,12 +6,28 @@
   "params":[
     {
       "name": "year",
-      "value": 2013,
       "bind": {
-        "input": "range",
-        "min": 2013,
-        "max": 2019,
-        "step": 1,
+        "input": "select",
+        "options": [
+          null,
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019"
+        ],
+        "labels": [
+          "Show All",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019"
+        ],
         "name": "Year: "
       }
     }
@@ -55,7 +71,7 @@
       },
     "transform": [
       {
-        "filter":"datum.ArchiveYear == year"
+        "filter":"year == null || datum.ArchiveYear == year"
       }
     ]
     }
