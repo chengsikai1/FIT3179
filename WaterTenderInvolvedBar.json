@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple bar chart with embedded data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/chengsikai1/FIT3179/main/California_Fire_Incidents.csv"
+  },
+  "mark": {"type": "bar", "color": "red"},
+  "encoding": {
+    "y": {"field": "ArchiveYear", "type": "nominal", "title": "Year"},
+    "x": {
+      "aggregate": "sum",
+      "field": "WaterTenders",
+      "type": "quantitative",
+      "title": "water tenders involved"
+    }
+  },
+  "config": {}
+}
