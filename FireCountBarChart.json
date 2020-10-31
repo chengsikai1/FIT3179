@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/chengsikai1/FIT3179/main/California_Fire_Incidents.csv"
+  },
+  "mark": "bar",
+  "params": [
+    {
+      "name": "year",
+      "value": 2013,
+      "bind": {
+        "input": "range",
+        "min": 2013,
+        "max": 2019,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [{"filter": "datum.ArchiveYear == year"}],
+  "encoding": {
+    "x": {
+      "timeUnit": "month",
+      "field": "Started",
+      "type": "nominal",
+      "title": "Month of the year"
+    },
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "title": "Count of wilefire "
+    }
+  },
+  "config": {}
+}
