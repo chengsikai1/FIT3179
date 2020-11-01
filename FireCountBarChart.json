@@ -3,7 +3,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/chengsikai1/FIT3179/main/California_Fire_Incidents.csv"
   },
-  "mark": "bar",
+  "mark": {"type":"bar","color":"#f03b20"},
   "params": [
     {
       "name": "year",
