@@ -51,13 +51,15 @@
       "data": {
         "url": "https://raw.githubusercontent.com/chengsikai1/FIT3179/main/California_Fire_Incidents.csv"
       },
-      "mark": {"type": "circle", 
-      "tooltip": {"content": "data"}, 
+      "mark": {"type": "circle",  
       "color":"#f03b20"
       },
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
+        "tooltip": [{"field":"Started", "type":"nominal","title":"Start time"},
+        {"field":"Location", "type": "nominal", "title": "Location"},
+        {"field":"AcresBurned","type": "quantitative","title":"Area burned"}],
         "size": {
           "field": "AcresBurned",
           "type": "quantitative",
@@ -76,5 +78,7 @@
     ]
     }
   ]
+
+}
 
 }
