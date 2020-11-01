@@ -4,10 +4,10 @@
   "data": {
     "url": "https://raw.githubusercontent.com/chengsikai1/FIT3179/main/California_Fire_Incidents.csv"
   },
-  "mark": "bar",
+  "mark": {"type":"bar","color":"#f03b20"},
   "encoding": {
-    "x": {"field": "ArchiveYear", "type": "nominal", "title": "Year"},
-    "y": {
+    "y": {"field": "ArchiveYear", "type": "nominal", "title": "Year"},
+    "x": {
       "aggregate": "sum",
       "field": "CrewsInvolved",
       "type": "quantitative",
