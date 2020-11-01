@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title":"Month vs No. of Wildfire",
   "data": {
     "url": "https://raw.githubusercontent.com/chengsikai1/FIT3179/main/California_Fire_Incidents.csv"
   },
